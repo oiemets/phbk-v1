@@ -1,0 +1,50 @@
+.edit_form {
+    padding: 10px;
+    margin-left: 50%;
+    width: 40%;
+    height: 30%;
+    position: fixed;
+}
+
+.edit_input {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #dadce0;
+}
+
+.edit_input:focus {
+    outline: none;  
+}
+
+.edit_form_btn {
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    color: #5F6368;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+}
+
+.save_btn:hover {
+    color: #1a73e8;
+    background-color: #f2f7fe; 
+    border: 1px solid #1a73e8;
+}
+
+.remove_btn:hover {
+    color: red;
+    background-color: #fef2f2;
+    border: 1px solid #e81a1a9b;
+}

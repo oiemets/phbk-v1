@@ -1,0 +1,113 @@
+.header {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    background: #fff;
+    height: 64px;
+    justify-content: space-between;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateY(0);
+    transition: transform .15s ease-out;
+    z-index: 10;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 5px 0 rgba(0,0,0,.23);
+}
+
+.nav {
+    height: 100%;
+    display: block;
+    margin: 0 48px;
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.menu_list {
+    height: 100%;
+    opacity: 1;
+    transition: opacity .35s;
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    list-style: none;
+}
+
+.menu_item {
+    height: 64px;
+    letter-spacing: .02rem;
+    line-height: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.menu_item a:focus {
+    outline: none;
+}
+
+.active {
+    border-bottom: 2px solid #3367D6;   
+}
+
+.menu_item {
+    padding: 0 12px;
+    color: #5f6368;
+    cursor: pointer;
+    padding: 0 8px;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+    letter-spacing: .02rem;
+    line-height: 1rem;
+}
+
+.menu_item a:hover {
+    cursor: pointer;
+    text-decoration: initial;
+    color: black;
+}
+
+.logout {
+    margin-right: 24px;
+    width: 124px;
+    background-color: #fff;
+    border: 1px solid #dadce0;
+    color: #1a73e8;
+    font-size: 16px;
+    padding: 13px 24px 11px;
+    transition: background-color .2s;   
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logout:hover {
+    background-color: #f2f7fe;
+    border: 1px solid #1a73e8;
+}
+
+.logout:active {
+    background-color: #e8f0fe;
+}
+
+.logout:focus {
+    border: 2px solid #1a73e8;
+    outline: 0;
+}
+
+.log_container {
+    min-width: 270px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.current_user {
+    color: #5f6368;
+}

@@ -1,0 +1,28 @@
+.details {
+    padding: 10px;
+    margin-left: 50%;
+    width: 40%;
+    height: 30%;
+    position: fixed;
+    font-family: 'Roboto', sans-serif;
+}
+
+.current_contact {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.current_contact h3 {
+    padding: 10px;
+    border-bottom: 1px solid #dadce0;
+}
+
+.edit_btn {
+    position: absolute;
+    right: 0;
+    color: #1a73e8;
+}
+
+.edit_btn:hover {
+    cursor: pointer;
+}

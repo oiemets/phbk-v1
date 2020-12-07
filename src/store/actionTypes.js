@@ -1,0 +1,12 @@
+export const AUTH = '[AUTH] Gets authorized user if there is any';
+export const AUTH_LOGIN = '[AUTH] Log user in to firebase';
+export const AUTH_LOGOUT = '[AUTH] Log in out current user';
+export const REMOVE_AUTH_ERROR = '[AUTH] Removes auth error message';
+export const SET_LOADER = '[CONTACTS] Setting up loader component';
+export const GET_CONTACTS = `[CONTACTS] Getting current user's contacts from the base`;
+export const ADD_CONTACT = '[CONTACTS] Adding new contact';
+export const ADD_CONTACT_ERROR = '[CONTACTS] Sends error message';
+export const REMOVE_CONTACT_ERROR = '[CONTACTS] Cleans out error message';
+export const ADD_CURRENT_CONTACT = '[CONTACTS] Sets current contact for details display';
+export const UPDATE_CONTACT = '[CONTACTS] Updates choosen contact';
+export const REMOVE_CONTACT = '[CONTACTS] Removes selected contact';
