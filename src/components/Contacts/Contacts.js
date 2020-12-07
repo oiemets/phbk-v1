@@ -4,25 +4,27 @@ import { connect } from 'react-redux';
 import { addCurrentContact, getContacts } from '../../store/actionCreator';
 
 
-const Contacts = props => {
+const Contacts = ({ uid, contacts, currentContact, getContacts, addCurrentContact }) => {
+
     useEffect(() => {
-        if(props.uid) {
-            props.getContacts(props.uid)
+        if(uid) {
+            getContacts(uid)
         }
-    }, [props.uid]);
+    }, [uid]);
+
     useEffect(() => {
-        if(props.contacts[0]) {
-            props.addCurrentContact(props.contacts[0])
+        if(contacts[0]) {
+            addCurrentContact(contacts[0])
         }
-    }, [props.contacts])
+    }, [contacts])
     return (
         <div className={styles.contacts_container}>
             <ul className={styles.contacts_list}>
-                {props.contacts.map(c => {
+                {contacts.map(c => {
                     return <li 
                         key={c.id} 
-                        className={`${styles.contacts_item} ${props.currentContact.id === c.id && styles.active_contact}`}
-                        onClick={() => props.addCurrentContact(c)}
+                        className={`${styles.contacts_item} ${currentContact.id === c.id && styles.active_contact}`}
+                        onClick={() => addCurrentContact(c)}
                     >{c.firstname} {c.lastname}</li>
                 })}
             </ul>

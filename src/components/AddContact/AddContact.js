@@ -5,18 +5,18 @@ import { addContact,removeAddContactErrorMessage } from '../../store/actionCreat
 import { v4 as uuidv4 } from 'uuid';
 
 
-const AddContact = props => {
+const AddContact = ({ uid, contacts, error, addContact, removeErrorMessage }) => {
     useEffect(() => {
         setTimeout(() => {
-            props.removeErrorMessage();
+            removeErrorMessage();
         }, 3000)
-    }, [props.error])
+    }, [error])
     return (
             <form 
                 className={styles.add_contact_form}
                 onSubmit={e => 
                     {e.preventDefault();
-                    props.addContact(props.uid, props.contacts, {
+                    addContact(uid, contacts, {
                         id: uuidv4(),
                         firstname: e.target.firstname.value,
                         lastname: e.target.lastname.value,
@@ -30,9 +30,9 @@ const AddContact = props => {
                     e.target.email.value = '';
                     e.target.address.value = '';
                 }}>
-                    {props.error && 
+                    {error && 
                     <div className={styles.error}>
-                        <h2>{props.error}</h2>
+                        <h2>{error}</h2>
                     </div>}
                 <div className={styles.inp_container}>
                     <label htmlFor="firstname" className={styles.add_label}>firstname:</label>

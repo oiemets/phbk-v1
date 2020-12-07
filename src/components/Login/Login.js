@@ -3,23 +3,26 @@ import { connect } from 'react-redux';
 import styles from './Login.module.css';
 import { login, removeAuthErrorMessage } from '../../store/actionCreator';
 
-const Login = props => {
+const Login = ({ errorCode, errorMessage, login, removeErrorMessage }) => {
+    
+
     useEffect(() => {
         setTimeout(() => {
-            props.removeErrorMessage();
+            removeErrorMessage();
         }, 5000)
-    }, [props.errorCode || props.errorMessage])
+    }, [errorCode])
+
     return (
         <>
-        {props.errorCode && <div className={styles.error}>
-            <h2 className={styles.err_code}>{props.errorCode}</h2>
-            <h2 className={styles.err_message}>{props.errorMessage}</h2>
+        {errorCode && <div className={styles.error}>
+            <h2 className={styles.err_code}>{errorCode}</h2>
+            <h2 className={styles.err_message}>{errorMessage}</h2>
         </div>}
 
         <div className={styles.form_container}>
             <form onSubmit={e => {
                 e.preventDefault(); 
-                props.login(e.target.email.value, e.target.password.value);
+                login(e.target.email.value, e.target.password.value);
                 e.target.email.value = '';
                 e.target.password.value = '';
             }}

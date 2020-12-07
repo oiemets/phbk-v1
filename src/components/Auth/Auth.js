@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { authState, getContacts, setLoader } from '../../store/actionCreator';
+import { authState, setLoader } from '../../store/actionCreator';
 import { auth } from '../../db/firebase';
 import { Route, Redirect } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ import Phonebook from '../Phonebook/Phonebook';
 
 
 
-const Auth = props => {
+const Auth = ({ email, loader, authState, setLoader})=> {
     const [currentUser, setCurrentUser] = useState({});
 
     useEffect(() => {
@@ -18,21 +18,21 @@ const Auth = props => {
             if(user) {
                 setCurrentUser(user);
             }
-            props.setLoader(false);
+            setLoader(false);
         });
     }, [])
 
     useEffect(() => {
-        props.auth(currentUser.email, currentUser.uid);
+        authState(currentUser.email, currentUser.uid);
     }, [currentUser]);
 
     return (
         <>
-            {props.loader && <Loader/>}
-            {props.email  && <Phonebook/>}
-            {(!props.loader && !props.email) && <Login/>}
+            {loader && <Loader/>}
+            {email  && <Phonebook/>}
+            {(!loader && !email) && <Login/>}
             <Route exact path="/">
-                {props.email && <Redirect to="/contacts"/>}
+                {email && <Redirect to="/contacts"/>}
             </Route>
         </>
     );
@@ -48,8 +48,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        auth: (email, uid) => dispatch(authState(email, uid)),
-        getContacts: (id) => dispatch(getContacts(id)),
+        authState: (email, uid) => dispatch(authState(email, uid)),
         setLoader: (bool) => dispatch(setLoader(bool))
     }
 }
