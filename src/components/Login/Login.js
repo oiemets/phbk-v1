@@ -10,7 +10,7 @@ const Login = ({ errorCode, errorMessage, login, removeErrorMessage }) => {
         setTimeout(() => {
             removeErrorMessage();
         }, 5000)
-    }, [errorCode])
+    }, [errorCode, removeErrorMessage])
 
     return (
         <>

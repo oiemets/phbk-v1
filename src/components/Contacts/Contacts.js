@@ -10,13 +10,13 @@ const Contacts = ({ uid, contacts, currentContact, getContacts, addCurrentContac
         if(uid) {
             getContacts(uid)
         }
-    }, [uid]);
+    }, [uid, getContacts]);
 
     useEffect(() => {
         if(contacts[0]) {
             addCurrentContact(contacts[0])
         }
-    }, [contacts])
+    }, [contacts, addCurrentContact])
     return (
         <div className={styles.contacts_container}>
             <ul className={styles.contacts_list}>

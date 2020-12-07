@@ -20,11 +20,11 @@ const Auth = ({ email, loader, authState, setLoader})=> {
             }
             setLoader(false);
         });
-    }, [])
+    }, [setLoader])
 
     useEffect(() => {
         authState(currentUser.email, currentUser.uid);
-    }, [currentUser]);
+    }, [currentUser, authState]);
 
     return (
         <>

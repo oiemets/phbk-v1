@@ -10,7 +10,7 @@ const AddContact = ({ uid, contacts, error, addContact, removeErrorMessage }) =>
         setTimeout(() => {
             removeErrorMessage();
         }, 3000)
-    }, [error])
+    }, [error, removeErrorMessage])
     return (
             <form 
                 className={styles.add_contact_form}
